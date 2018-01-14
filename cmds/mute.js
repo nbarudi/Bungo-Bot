@@ -31,7 +31,10 @@ module.exports.run = async (bot, message, args) => {
 
         toMute.addRole(role)
 
-        let logs = bot.channels.get("nane", "logs")
+        for(let i in bot.logs) {
+            if (!bot.logs[i] == message.guild.id) continue
+            let templogs = bot.logs[i].logs_channel
+            let logs = message.guild.channels.find("id",templogs)
         embed = new Discord.RichEmbed()
         embed.setTitle(`Muting!`)
         embed.addField(`Muted: `, `${message.author} Muted ${toMute} From Speaking :speak_no_evil:`)
@@ -41,6 +44,7 @@ module.exports.run = async (bot, message, args) => {
         logs.send({embed: embed})
         message.channel.send(`User: ${toMute} has been muted! :speak_no_evil:`)
         return
+        }
 }
 
 module.exports.help = {
