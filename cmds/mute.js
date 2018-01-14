@@ -2,7 +2,8 @@ const Discord = module.require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
     var hours = (new Date()).getHours();
-        if(!message.member.roles.has("390536021063761922")) return message.channel.send("Sorry, you do not have the correct permissions!")
+    let adminRole = message.guild.roles.find("name", "Moderator")
+    if(!message.member.roles.has(adminRole.id)) return message.channel.send("Sorry, you do not have the correct permissions!")
 
         let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
         var person = message.guild.member(message.author)
