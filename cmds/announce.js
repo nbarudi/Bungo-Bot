@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if(message.member.roles.has(modRole.id)){
         let announcement = args.join(" ")
         for(let i in bot.announce) {
-            if (!bot.announce[i] == message.guild.id) continue
+            if (!bot.announce[i] === message.guild.id) return
             let templogs = bot.announce[i].announce_channel
             let logs = message.guild.channels.find("id",templogs)
     announcechannel.send("@everyone")
