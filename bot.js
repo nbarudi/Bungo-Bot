@@ -5,6 +5,7 @@ const bot = new Discord.Client()
 
 const prefix = process.env.BOT_PREFIX
 bot.commands = new Discord.Collection()
+bot.botchannels = require("./channels.json")
 
 fs.readdir("./cmds", (err, files) =>{
     if (err) console.error(err)
