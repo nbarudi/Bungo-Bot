@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     
 
     for(let i in bot.logs) {
-        if (!bot.logs[i] == message.guild.id) continue
+        if (bot.logs[i] == message.guild.id){
         let templogs = bot.logs[i].logs_channel
         let logs = message.guild.channels.find("id",templogs)
         embed = new Discord.RichEmbed()
@@ -37,6 +37,7 @@ module.exports.run = async (bot, message, args) => {
         embed.addField(`Ran At: `, `${hours} hours into the day`)
         embed.setColor(`#ff0000`)
         logs.send({embed: embed})
+        }
     return
     }
     
