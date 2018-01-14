@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     
 
     for(let i in bot.logs) {
-        if (!(bot.logs[i] == message.guild.id)) return
+        if (!bot.logs[i] === message.guild.id) return
         let templogs = bot.logs[i].logs_channel
         let logs = message.guild.channels.find("id",templogs)
         embed = new Discord.RichEmbed()
