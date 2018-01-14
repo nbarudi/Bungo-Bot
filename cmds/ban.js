@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         message.guild.member(toKick).ban("You have been removed! If this is a mistake then send a message to the owner of  the discord!")
 
         message.channel.send(`Banned ${toKick}!`).then(message => message.delete(5000))
-        let logs = bot.channels.get("name", "Logs")
+        let logs = bot.channels.get("name", "logs")
         embed = new Discord.RichEmbed()
         embed.setTitle(`Banning!`)
         embed.addField(`Banned: `, `${message.author} Banned ${toKick} from the server!`)
