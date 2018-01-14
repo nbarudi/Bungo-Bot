@@ -30,7 +30,7 @@ fs.readdir("./cmds", (err, files) =>{
 
 bot.on("ready", () =>{
     console.log("Bot is now online!")
-    console.log('The current prefix is: ' + prefix)
+    console.log('The current prefix is: ' + botSettings.prefix)
     console.log("Running on the name: " + bot.user.username)
     console.log('The current id is: ' + bot.user.id)
 })
