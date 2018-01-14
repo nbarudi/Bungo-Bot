@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
         console.log("Info Message Removed! Messages Removed As planned!")
     })
 
-    let logs = bot.channels.get("390535128322932746")
+    let logs = bot.channels.get("name","logs")
     embed = new Discord.RichEmbed()
     embed.setTitle(`Purging!`)
     embed.addField(`Purge: `, `${message.author} Purged ${messagecount} messages!`)
